@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-protegida',
   templateUrl: './protegida.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class ProtegidaComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(public auth: AuthService) {}
 
   ngOnInit(): void {
+    const user = this.auth;
+    console.log(user)
   }
-
 }

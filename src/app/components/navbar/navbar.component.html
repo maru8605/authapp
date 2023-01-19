@@ -9,7 +9,7 @@
         <li class="nav-item" routerLinkActive="activate">
           <a class="nav-link" routerLink="/precios">Precios</a>
         </li>
-        <li class="nav-item" routerLinkActive="activate">
+        <li class="nav-item" routerLinkActive="activate" *ngIf="auth.user$ | async as user">
           <a class="nav-link" routerLink="/protegida">Protegido</a>
         </li>
       </ul>

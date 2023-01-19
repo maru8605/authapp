@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout();
+    this.auth.logout({ returnTo: document.location.origin });
 
   }
 }
