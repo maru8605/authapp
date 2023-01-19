@@ -13,9 +13,15 @@
           <a class="nav-link" routerLink="/protegida">Protegido</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
+      <div class="navbar-text">
+        <div *ngIf="autentificado">
+          <button (click)="logout()"  type="button" class="btn btn-warning" >Logout</button>
+        </div>
+        <div #loggedOut *ngIf="!autentificado">
+          <button (click)="login()" *ngIf="!autentificado" type="button" class="btn btn-secondary">Login</button>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
+
